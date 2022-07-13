@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Dancing Script", cursive;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  color: #F5F5F5;
+}
+
+.game {
+  background: #595150;
+  width: 900px;
+  height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.game .contenaire-game {
+  height: 94%;
+  margin: 1rem;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto;
+}
+
+input {
+  display: none;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header-contenaire {
+  background: #746d66;
+  width: inherit;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  font-weight: 100;
+  text-transform: capitalize;
+  position: relative;
+}
+header .header-contenaire h1 {
+  position: relative;
+}
+header .header-contenaire h1 .help-contenaire {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header-contenaire h1 .help-contenaire #help {
+  font-size: 1.1rem;
+  color: #B3AAA1;
+  cursor: pointer;
+}
+header .header-contenaire .quit-game {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+header .header-contenaire .quit-game:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+header .header-contenaire .quit-game:active {
+  transform: translateY(-50%) scale(0.9);
+}
+header .header-contenaire .quit-game .quit-icone {
+  color: white !important;
+  background: #E9130D;
+  font-size: 30px;
+  padding: 5px 10px 2px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 0px #333;
+}
+
+main {
+  background: #D0CBC5;
+  color: #333 !important;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  padding: 20px !important;
+}
+
+.hidden {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 150px 70px 1fr;
+  grid-template-areas: "A" "B" "C";
+}
+.hidden .hidden-contenaire {
+  grid-area: A;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #B3AAA1;
+}
+.hidden .hidden-contenaire .hidden-each {
+  background: #D0CBC5;
+  height: 70%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.hidden .points {
+  grid-area: B;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #ddd;
+}
+.hidden .points .point-contenaire {
+  display: flex;
+}
+.hidden .points .point-contenaire .icone {
+  transform: scale(2.2) translateY(15%);
+  margin-right: 1rem;
+  font-weight: bold;
+}
+.hidden .points .point-contenaire .score {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.hidden .levels {
+  grid-area: C;
+  background: #ddd;
+}
+.hidden .levels p {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.hidden .levels .all-level {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hidden .levels .all-level .level-each {
+  width: 200px;
+  padding: 2px 0;
+  background: #4BA73C;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #F5F5F5;
+  letter-spacing: 6px;
+  border-top: 1px solid #D0CBC5;
+  border-left: 1px solid #D0CBC5;
+  border-bottom: 1px solid #595150;
+  border-right: 1px solid #595150;
+  transition: 0.3s ease-in-out;
+}
+.hidden .levels .all-level .level-each:hover {
+  transform: translateY(-2px);
+  border-bottom: 1px solid #D0CBC5;
+  border-right: 1px solid #D0CBC5;
+  border-top: 1px solid #595150;
+  border-left: 1px solid #595150;
+}
+.hidden .levels .all-level .level-each:active {
+  transform: translateX(10px) scale(0.9);
+}
+
+.choice {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 80px;
+  grid-template-areas: "A" "B";
+}
+.choice .choice-number {
+  grid-area: A;
+  background: #B3AAA1;
+  height: 100%;
+}
+.choice .choice-btm {
+  grid-area: B;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.choice .choice-btm button {
+  width: 200px;
+  padding: 2px 0;
+  background: #4BA73C;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #F5F5F5;
+  letter-spacing: 6px;
+  border-top: 1px solid #D0CBC5;
+  border-left: 1px solid #D0CBC5;
+  border-bottom: 1px solid #595150;
+  border-right: 1px solid #595150;
+  transition: 0.3s ease-in-out;
+}
+.choice .choice-btm button:hover {
+  transform: translateY(-2px);
+  border-bottom: 1px solid #D0CBC5;
+  border-right: 1px solid #D0CBC5;
+  border-top: 1px solid #595150;
+  border-left: 1px solid #595150;
+}
+.choice .choice-btm button:active {
+  transform: translateX(10px) scale(0.9);
+}
+
+/*# sourceMappingURL=style.css.map */

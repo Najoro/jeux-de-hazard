@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jeux de hazard</title>
+
+    <!--style-->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!--js-->
+    <script src="./JavaScripts/index.js" defer></script>
+  </head>
+  <body>
+    <div class="game">
+      <div class="contenaire-game">
+        <header>
+          <article class="header-contenaire">
+            <div class="title">
+              <h1>Jeux de hazard 
+                <span class="help-contenaire">
+                  <span id="help">&#8505</span>
+                </span>
+              </h1>
+            </div>
+            <div class="quit-game">
+            <span class="quit-icone">&#9874</span>
+            </div>
+          </article>
+        </header>
+
+
+        <main>
+          <article class="number-contenaire">
+            <div class="hidden">
+
+              <div class="hidden-contenaire">
+                <span class="hidden-each">?</span>
+                <span class="hidden-each">?</span>
+              </div>
+
+              <article class="points">
+                <div class="point-contenaire">
+                  <div class="icone"style="color: red;"">&#9829</div>
+                  <div class="score" style="color: red;">3 vie</div>
+                </div>
+                <div class="point-contenaire">
+                  <div class="icone" >&#36</div>
+                  <div class="score">50 pnts</div>
+                </div>
+              </article>
+
+              <article class="levels">
+                <p>niveaux :</p>
+                <span class="all-level">
+                  <div class="level-each">
+                    <input type="radio" name="level" id="level1" />
+                    <label for="level1">1...10</label>
+                  </div>
+                  <div class="level-each">
+                    <input type="radio" name="level" id="level2" />
+                    <label for="level2">1...50</label>
+                  </div>
+                  <div class="level-each">
+                    <input type="radio" name="level" id="level3" />
+                    <label for="level3">1...100</label>
+                  </div>
+                </span>
+              </article>
+            </div>
+          </article>
+
+          <article class="number-contenaire">
+
+            <div class="choice">
+              <span class="choice-number"></span>
+              <span class="choice-btm">
+                <button id = "valid-btm">Valider</button>
+                <button id = "back-btm">retour</button>
+              </span>
+            </div>
+
+          </article>
+        </main>
+      </div>
+    </div>
+
+
+  </body>
+</html>

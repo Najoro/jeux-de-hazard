@@ -1,0 +1,25 @@
+.choice{
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 80px;
+  grid-template-areas: 
+  "A"
+  "B";
+  .choice-number{
+    grid-area: A;
+    background: $color-9;
+    height: 100%;
+  }
+  .choice-btm{
+    grid-area: B;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    button{
+      @include bouton;
+    }
+  }
+}
