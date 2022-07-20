@@ -2,14 +2,42 @@
   height: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 1fr 80px;
+  grid-template-rows: 380px 1fr;
   grid-template-areas: 
   "A"
   "B";
   .choice-number{
     grid-area: A;
     background: $color-9;
-    height: 100%;
+    max-width: inherit;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow: auto;
+    #numberEatch + label{
+      width: 60px;
+      height: 60px;
+      font-size: 1.4rem;
+      background: $color-7;
+      color: $color-10;
+      font-weight: bold;
+      margin: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      transition: 0.1s ease-in-out;
+      &:hover{
+        transform: scale(1.09);
+        background: $color-6;
+      }
+      &:active{
+        transform: scale(.9);
+        background: $color-6;
+      }
+    }
+
   }
   .choice-btm{
     grid-area: B;

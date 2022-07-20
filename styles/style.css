@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 * {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script", sans-serif;
 }
 
 body {
@@ -164,7 +163,7 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.hidden .levels .all-level .level-each {
+.hidden .levels .all-level .level-each label {
   width: 200px;
   padding: 2px 0;
   background: #4BA73C;
@@ -183,14 +182,14 @@ main {
   border-right: 1px solid #595150;
   transition: 0.3s ease-in-out;
 }
-.hidden .levels .all-level .level-each:hover {
+.hidden .levels .all-level .level-each label:hover {
   transform: translateY(-2px);
   border-bottom: 1px solid #D0CBC5;
   border-right: 1px solid #D0CBC5;
   border-top: 1px solid #595150;
   border-left: 1px solid #595150;
 }
-.hidden .levels .all-level .level-each:active {
+.hidden .levels .all-level .level-each label:active {
   transform: translateX(10px) scale(0.9);
 }
 
@@ -198,13 +197,40 @@ main {
   height: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 1fr 80px;
+  grid-template-rows: 380px 1fr;
   grid-template-areas: "A" "B";
 }
 .choice .choice-number {
   grid-area: A;
   background: #B3AAA1;
-  height: 100%;
+  max-width: inherit;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.choice .choice-number #numberEatch + label {
+  width: 60px;
+  height: 60px;
+  font-size: 1.4rem;
+  background: #746d66;
+  color: #ddd;
+  font-weight: bold;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: 0.1s ease-in-out;
+}
+.choice .choice-number #numberEatch + label:hover {
+  transform: scale(1.09);
+  background: #595150;
+}
+.choice .choice-number #numberEatch + label:active {
+  transform: scale(0.9);
+  background: #595150;
 }
 .choice .choice-btm {
   grid-area: B;
