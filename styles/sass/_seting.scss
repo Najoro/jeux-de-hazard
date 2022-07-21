@@ -8,7 +8,7 @@ $color-8 : #333;
 $color-9 : #B3AAA1;
 $color-10 : #ddd;
 
-// @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 $ff : 'Dancing Script', sans-serif;
 $radius : 10px;
 *{
@@ -30,8 +30,8 @@ body{
 }
 .game{
   background: $color-6;
-  width: 900px;
-  height: 600px;
+  max-width: 900px;
+  max-height: 600px;
   border-radius: $radius;
   overflow: hidden;
   .contenaire-game{

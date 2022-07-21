@@ -1,13 +1,10 @@
 @mixin bouton {
   width: 200px;
-  padding: 2px 0;
+  padding: 10px;
   background:$color-5;
-  font-size: 1.5rem;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: calc($radius + 40px);
   font-weight: bold;
   color: $color-1;
   letter-spacing: 6px;
@@ -15,7 +12,7 @@
   border-left: 1px solid $color-4;
   border-bottom: 1px solid $color-6;
   border-right: 1px solid $color-6;
-  transition: .3s ease-in-out;
+  transition: .1s ease-in-out;
   &:hover{
     transform: translateY(-2px);
     border-bottom: 1px solid $color-4;
@@ -24,6 +21,6 @@
     border-left: 1px solid $color-6;
   }
   &:active{
-    transform:translateX(10px) scale(0.9);
+    transform:translateX(2px) scale(0.99);
   }
 }

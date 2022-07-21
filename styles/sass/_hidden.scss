@@ -13,6 +13,18 @@
     justify-content: space-around;
     align-items: center;
     background: $color-9;
+    position: relative;
+    .indication-icone{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      .indication{
+        font-size: 6rem;
+        color: $color-6;
+        transition: 0.2s ease-in-out;
+      }
+    }
     .hidden-each{
       background: $color-4;
       height: 70%;
@@ -52,13 +64,24 @@
     }
     .all-level{
       width: 100%;
+      min-width: 200px;
+      height: 200px;
+      overflow: auto;
       display: flex;
       justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      align-items:flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
       .level-each{
         label{
           @include bouton;
+          width: 50%;
+          height: 10px;
+          border-radius: 0;
+          margin: 10px;
+          padding: 20px;
+          letter-spacing: 0.1px;
+          
         }
       }
     }

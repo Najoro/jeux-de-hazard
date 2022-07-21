@@ -5,12 +5,22 @@
 
 //decalration...
 const btmRadios = document.querySelectorAll('input[type="radio"]');
-let levelTables = []; 
+const numberYours = document.getElementById("numberYours");
+const numberMister = document.getElementById("numberMister");
+const valid = document.getElementById('valid-btm');
 
-const level = {
-  level1: 10,
-  level2: 50,
-  level3: 100,
+
+let mister = 0;
+let your = 0;
+
+let levelTables = [];
+const levels = {
+  level1: 23,
+  level2: 35,
+  level3: 53,
+  level4: 101,
+  level5: 149,
+  level6: 203,
 };
 //functions...
 const utils = {
@@ -19,40 +29,69 @@ const utils = {
     for (let i = 0; i < arg + 1; i++) {
       levelTables.push(i);
     }
-    console.log(levelTables)
+    console.log(levelTables);
+    this.displayLevel();
+    this.displayNumberInCase();
+    this.displayNumbreMIster();
   },
 
-  displayNumber : function(){
-   const numbers = document.getElementById("numbers");
-   numbers.textContent = " "
-   levelTables.forEach(element => {
-    numbers.innerHTML += `
-    <input type="checkbox" name="numberEatch" value = ${element} id="numberEatch">
-    <label for="numberEatch">${element}</label>
+  displayLevel: function () {
+    const numbers = document.getElementById("numbers");
+    numbers.textContent = " ";
+    levelTables.forEach((element) => {
+      numbers.innerHTML += `
+    <div>
+      <input type="checkbox" name="numberEatch" value = ${element} id="numberEatch">
+      <label for="numberEatch" id="labelNumber">${element}</label>
+    </div>
     `;
-  });
+    });
+  },
+
+  displayNumberInCase: function () {
+    for (const item of labelNumber) {
+      item.addEventListener("click", () => {
+        your = parseInt(item.textContent);
+        numberYours.textContent = your;
+      });
+    }
+  },
+  displayNumbreMIster(){
+    mister =  Math.ceil((Math.random() * levelTables.length) - 1);
+
+  },
+
+  testNumbre(){
+    const indication = document.querySelector('.indication');
+    function display(icone,transform) {
+      indication.innerHTML = icone
+      indication.style.transform = transform
+    }
+    if (your === mister) {
+      numberMister.textContent = mister;
+      utils.displayNumbreMIster();
+      display("&#x2714", "rotate(0deg)")
+      setTimeout(() => {
+        indication.innerHTML = "&#x27BC"
+        numberMister.textContent = "?";
+     }, 3000);
+    }else if(your < mister){
+      display("&#x27BC", "rotate(-90deg)")
+    }else{
+      display("&#x27BC", "rotate(90deg)")
+    }
   }
 };
 //event....
 btmRadios.forEach((btmRadio) => {
   btmRadio.addEventListener("click", () => {
-    if (btmRadio.checked) {
-      switch (btmRadio.id) {
-        case "level1":
-          utils.levelActive(level.level1);
-          utils.displayNumber();
-          break;
-        case "level2":
-          utils.levelActive(level.level2);
-          utils.displayNumber();
-          break;
-        case "level3":
-          utils.levelActive(level.level3);
-          utils.displayNumber();
-          break;
-        default:
-          break;
+    for (const level in levels) {
+      if (btmRadio.id == level) {
+        utils.levelActive(levels[level]);
       }
     }
   });
 });
+valid.addEventListener('click', ()=> {
+  utils.testNumbre();
+})

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +18,8 @@ body {
 
 .game {
   background: #595150;
-  width: 900px;
-  height: 600px;
+  max-width: 900px;
+  max-height: 600px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -118,6 +119,18 @@ main {
   justify-content: space-around;
   align-items: center;
   background: #B3AAA1;
+  position: relative;
+}
+.hidden .hidden-contenaire .indication-icone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hidden .hidden-contenaire .indication-icone .indication {
+  font-size: 6rem;
+  color: #595150;
+  transition: 0.2s ease-in-out;
 }
 .hidden .hidden-contenaire .hidden-each {
   background: #D0CBC5;
@@ -158,21 +171,22 @@ main {
 }
 .hidden .levels .all-level {
   width: 100%;
+  min-width: 200px;
+  height: 200px;
+  overflow: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .hidden .levels .all-level .level-each label {
   width: 200px;
-  padding: 2px 0;
+  padding: 10px;
   background: #4BA73C;
-  font-size: 1.5rem;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
   font-weight: bold;
   color: #F5F5F5;
   letter-spacing: 6px;
@@ -180,7 +194,13 @@ main {
   border-left: 1px solid #D0CBC5;
   border-bottom: 1px solid #595150;
   border-right: 1px solid #595150;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
+  width: 50%;
+  height: 10px;
+  border-radius: 0;
+  margin: 10px;
+  padding: 20px;
+  letter-spacing: 0.1px;
 }
 .hidden .levels .all-level .level-each label:hover {
   transform: translateY(-2px);
@@ -190,7 +210,7 @@ main {
   border-left: 1px solid #595150;
 }
 .hidden .levels .all-level .level-each label:active {
-  transform: translateX(10px) scale(0.9);
+  transform: translateX(2px) scale(0.99);
 }
 
 .choice {
@@ -242,14 +262,11 @@ main {
 }
 .choice .choice-btm button {
   width: 200px;
-  padding: 2px 0;
+  padding: 10px;
   background: #4BA73C;
-  font-size: 1.5rem;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
   font-weight: bold;
   color: #F5F5F5;
   letter-spacing: 6px;
@@ -257,7 +274,7 @@ main {
   border-left: 1px solid #D0CBC5;
   border-bottom: 1px solid #595150;
   border-right: 1px solid #595150;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 .choice .choice-btm button:hover {
   transform: translateY(-2px);
@@ -267,7 +284,7 @@ main {
   border-left: 1px solid #595150;
 }
 .choice .choice-btm button:active {
-  transform: translateX(10px) scale(0.9);
+  transform: translateX(2px) scale(0.99);
 }
 
 /*# sourceMappingURL=style.css.map */
