@@ -1,6 +1,6 @@
 .choice{
   height: 100%;
-  display: grid;
+  display: grid;  
   grid-template-columns: auto;
   grid-template-rows: 380px 1fr;
   grid-template-areas: 
@@ -9,6 +9,8 @@
   .choice-number{
     grid-area: A;
     background: $color-9;
+    font-size: 2rem;
+    line-height: -1rem;
     max-width: inherit;
     display: flex;
     justify-content: center;

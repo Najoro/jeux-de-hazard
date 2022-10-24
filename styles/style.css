@@ -223,6 +223,8 @@ main {
 .choice .choice-number {
   grid-area: A;
   background: #B3AAA1;
+  font-size: 2rem;
+  line-height: -1rem;
   max-width: inherit;
   display: flex;
   justify-content: center;
